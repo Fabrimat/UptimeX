@@ -21,7 +21,7 @@ public abstract class ConfigManager {
                 e.printStackTrace();
             }
         }
-        configuration = configurationProvider.load(new File(AppServer.getInstance().getWorkingDirectory(), fileName));
+        setConfiguration(configurationProvider.load(new File(AppServer.getInstance().getWorkingDirectory(), fileName)));
     }
     
     public Configuration getConfiguration() {
