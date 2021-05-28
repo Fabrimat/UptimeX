@@ -1,7 +1,5 @@
 package me.fabrimat.uptimex.scheduler;
 
-import org.jetbrains.annotations.NotNull;
-
 import java.util.concurrent.ThreadFactory;
 
 public class UptimeThreadFactory implements ThreadFactory {
@@ -12,7 +10,7 @@ public class UptimeThreadFactory implements ThreadFactory {
     }
     
     @Override
-    public Thread newThread(@NotNull Runnable runnable) {
+    public Thread newThread(Runnable runnable) {
         Thread t = new Thread(runnable, "UptimeX Pool Thread #" + counter);
         counter++;
         return t;

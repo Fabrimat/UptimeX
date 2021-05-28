@@ -5,7 +5,6 @@ import me.fabrimat.uptimex.job.exceptions.JobAlreadyRegisteredException;
 import me.fabrimat.uptimex.job.exceptions.JobNotRegisteredException;
 import me.fabrimat.uptimex.scheduler.ScheduledTask;
 import me.fabrimat.uptimex.scheduler.Scheduler;
-import org.jetbrains.annotations.NotNull;
 
 import java.util.HashMap;
 import java.util.List;
@@ -20,7 +19,7 @@ public class JobManager {
         this.registeredJobs = new HashMap<>();
     }
     
-    public void registerJob(@NotNull Job job) {
+    public void registerJob(Job job) {
         if (!getRegisteredJobs().containsKey(job.getJobName())) {
             getRegisteredJobs().put(job.getJobName(), job);
             scheduleJob(job);
@@ -45,7 +44,7 @@ public class JobManager {
         }
     }
     
-    private void scheduleJob(@NotNull Job job) {
+    private void scheduleJob(Job job) {
         if (job.getScheduleInfo() == null) {
             return;
         }
@@ -70,7 +69,7 @@ public class JobManager {
         job.getScheduleInfo().setScheduledTask(scheduledTask);
     }
     
-    private void cancelJob(@NotNull Job job) {
+    private void cancelJob(Job job) {
         if (job.getScheduleInfo() != null) {
             job.getScheduleInfo().getScheduledTask().cancel();
             job.getScheduleInfo().setScheduledTask(null);
