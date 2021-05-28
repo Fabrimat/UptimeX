@@ -33,7 +33,3 @@ target/
 # Intellij Files
 .idea/
 uptimex.log.0
-
-jobs.yml
-
-config.yml
